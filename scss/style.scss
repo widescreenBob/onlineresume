@@ -1,0 +1,509 @@
+$site-margin: 0 4rem;
+$site-spacing-md: 0 2rem;
+$site-gray: #333;
+$site-border: #c4c4c4;
+$site-green:#98e698;
+
+html {
+  font-size: 62.5%;
+  font-family: sans-serif;
+
+  &.fonts-loaded {
+    font-family:'Oswald', sans-serif;
+  }
+}
+
+// Set up basic style info
+body {
+  font-size: 1.6rem;
+  color: $site-gray;
+  padding: 2rem 0 0;
+}
+
+a {
+  color: white;
+  text-decoration: none;
+  border-bottom: 2px solid white;
+  transition: all 0.8s ease;
+
+  &:hover {
+    color: $site-green;
+  }
+}
+
+h1,h2,h3,h4 {
+  line-height: 1;
+  font-weight: 400;
+  text-transform: uppercase;
+  color: black;
+
+  &.white-header {
+    color: white;
+  }
+}
+
+h1 {
+  font-size: 7.2rem;
+  margin: 1rem 0;
+}
+
+h2 {
+  font-size: 5rem;
+}
+
+h3 {
+  font-size: 3.5rem;
+}
+
+h4 {
+  font-size: 2.4rem;
+}
+
+address {
+  font-style: normal;
+  margin-top: 1rem;
+}
+
+//Content area styling
+.l-content-area {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 2rem;
+
+  @media (min-width: 825px) {
+    flex-direction: row;
+    padding: 2rem 4rem;
+  }
+}
+
+.l-content-area--white {
+  background: white;
+}
+
+.l-content-area--black {
+  background: black;
+  color: white;
+}
+
+.l-content__full {
+  display: block;
+  margin: 6rem 0 0;
+  padding: 2rem 4rem;
+  position: relative;
+  border-top: 1px solid $site-border;
+}
+
+// Section and Aside styles
+aside {
+  flex: 2 2 auto;
+  position: relative;
+  min-width: 30%;
+  order: 2;
+  text-align: center;
+
+  @media (min-width: 825px) {
+  order: 1;
+  text-align: left;
+  }
+}
+
+section {
+  //Control the width with flex.
+  flex: 3 3 auto;
+  text-align: center;
+  position: relative;  
+
+  @media (min-width: 825px) {
+    order: 1;
+    text-align: left;
+  }
+}
+
+// Header section.
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: $site-spacing-md;
+  flex-direction: column;
+
+  @media (min-width: 825px) {
+    flex-direction: row;
+    margin: $site-margin;
+  }
+}
+
+.header__name {
+  flex: 1 1 auto;
+  
+  @media (min-width: 825px) {
+    flex: 3 3 auto;
+  }
+}
+
+.header__print {
+  display: none;
+
+  @media (min-width: 825px) {
+    left: -61px;
+    display: block;
+    position: absolute;
+    top: 50%;
+    background: black;
+    color: white;
+    padding: 1rem;
+    transform: rotate(-90deg) translate(30%,0px);
+  }  
+}
+
+.header__contact {
+  position: relative;
+  display: flex;
+  flex: 1 1 auto;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+
+  @media (min-width: 825px) {
+    flex: 2 2 auto;
+    width: auto;
+    
+  }
+}
+
+.header__contact--items {
+  width: 80%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content:space-around;
+  padding: 2rem 0.5rem 0;
+
+  @media  (min-width: 825px) {
+    max-width: 180px;
+    width: 60%;
+    padding: 0.5rem 0.5rem;
+  }
+  
+  span {
+    height: 51px;
+    margin-bottom: 1rem;
+  }
+  
+  svg {
+    width: 45px;
+    height: auto;
+    border: 3px solid black;
+  }
+
+  a:hover svg {
+    .st0 {
+      fill: black;
+      transition: all 0.8s ease-in;
+    }
+    .st1 {
+      fill: $site-green;
+      transition: all 0.8s ease-in;
+    }
+  } 
+}
+
+// Experience Section
+.experience-item {
+  cursor: pointer;
+}
+
+.experience-item__extra-info {
+  transition: all 1s ease-out;
+  opacity: 0; 
+  height: 0;
+  overflow: hidden;
+
+  .js-open & {
+    opacity: 1;
+    height: 200px;
+  }
+}
+
+.js-arrow-indicator {
+  width: 1.5rem;
+  margin: 0 0 0.5rem 2rem;
+  fill: $site-gray;
+  transform-origin: 50%;
+  transition: all 0.5s ease;
+  
+  .js-open & {
+    transform: rotate(-180deg);
+  }
+}
+
+.skills-list {
+  margin-bottom: 5rem;
+}
+
+.full-tab {
+  padding: 1rem;
+  border: 1px solid $site-border;
+  border-bottom: 0;
+  color: black;
+  position: absolute;
+  top:-3.9rem;
+  left: 4rem;
+}
+
+// Helper class to remove margins.
+.no-spacing {
+  padding: 0;
+  margin:0;
+}
+
+// Helper class to add top spacing.
+.top-spacing {
+  padding: 0;
+  margin: 2rem 0 0;
+}
+// Helper class to add color.
+.gray {
+  color: $site-gray;
+}
+
+// Helper class to add background color.
+.background-gray {
+  background-color: #f1f1f1;
+}
+
+// Helper class to add border.
+.left-border {
+  padding: $site-spacing-md;
+  position: relative;
+  margin-left: 0;
+  padding-left: 0;
+  @media (min-width: 825px) {
+  margin-left: 2rem;
+  padding-left: 4rem;  
+  }
+  
+  &:before {
+    content: '';
+    width: 0;
+    top: 50%;
+    left: 0;
+    transform: translate(0%, -50%);
+    height: 80%;
+    background: black;
+    position: absolute;
+    
+    @media(min-width: 825px) {
+      width: 2px; 
+    }
+  }
+  
+  &.black:before {
+    background: white;
+  }
+}
+
+
+@media print {
+  // To allow print preview
+  * {
+    -webkit-print-color-adjust: exact; 
+  }
+
+  h1,h2,h3,h4 {
+    line-height: 1;
+    font-weight: 400;
+    text-transform: uppercase;
+    color: black;
+
+    &.white-header {
+      color: white;
+    }
+  }
+
+  h1 {
+    font-size: 7.2rem;
+    margin: 1rem 0;
+  }
+
+  h2 {
+    font-size: 5rem;
+  }
+
+  h3 {
+    font-size: 3.5rem;
+  }
+
+  h4 {
+    font-size: 2.4rem;
+  }
+
+  address {
+    font-style: normal;
+    margin-top: 1rem;
+  }
+
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+    margin: $site-margin;
+  }
+
+  .header__name {
+    flex: 3 3 auto;
+  }
+
+  .header__print {
+    display: none;
+   }
+
+  .header__contact {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex: 2 2 auto;
+    width: auto;
+  }
+
+  // Helper class to remove margins.
+  .no-spacing {
+    padding: 0;
+    margin:0;
+  }
+
+  // Helper class to add top spacing.
+  .top-spacing {
+    padding: 0;
+    margin: 2rem 0 0;
+  }
+
+  // Helper class to add color.
+  .gray {
+    color: $site-gray;
+  }
+
+  .background-gray {
+    background-color: #f1f1f1;
+  }
+
+  .l-content-area {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    padding: 2rem 4rem;
+  }
+
+  aside {
+    flex: 2 2 auto;
+    position: relative;
+    min-width: 30%;
+    order: 2;
+    text-align: center;
+    order: 1;
+    text-align: left;
+  }
+
+  section {
+    //Control the width with flex.
+    flex: 3 3 auto;
+    position: relative;  
+    order: 1;
+    text-align: left;
+  }
+
+  .l-content-area--white {
+    background: white;
+  }
+
+  .l-content-area--black {
+    background: black;
+    color: white;
+  }
+
+  // Helper class to add a border.
+  .left-border {
+    padding: $site-spacing-md;
+    position: relative;
+    margin-left: 2rem;
+    padding-left: 4rem;  
+    
+    &:before {
+      content: '';
+      top: 50%;
+      left: 0;
+      transform: translate(0%, -50%);
+      height: 80%;
+      background: black;
+      position: absolute;
+      width: 2px; 
+    }
+    
+    &.black:before {
+      background: white;
+    }
+  }
+
+  .header__contact {
+    display: none;
+  }
+
+  .l-content__full {
+    display: block;
+    margin: 6rem 0 0;
+    padding: 2rem 4rem;
+    position: relative;
+    border-top: 1px solid $site-border;
+  }
+
+  .full-tab {
+    padding: 1rem;
+    border: 1px solid $site-border;
+    border-bottom: 0;
+    color: black;
+    position: absolute;
+    top:-3.9rem;
+    left: 4rem;
+  }
+
+  .js-arrow-indicator {
+    display: none;
+  }
+
+  .experience-item {
+    cursor: pointer;
+  }
+
+  .experience-item__extra-info {
+    transition: all 1s ease-out;
+    overflow: hidden;
+    opacity: 1;
+    height: 200px;
+  }
+
+  .header__contact--items {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content:space-around;
+    max-width: 180px;
+    width: 60%;
+    padding: 0.5rem 0.5rem;
+
+    
+    span {
+      height: 51px;
+      margin-bottom: 1rem;
+    }
+    
+    svg {
+      width: 45px;
+      height: auto;
+      border: 3px solid black;
+    } 
+  }
+
+}
